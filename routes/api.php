@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PokemonController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +30,6 @@ Route::group([
     Route::post('/auth/refresh', [AuthController::class, 'refresh']);
     Route::get('/auth/me', [AuthController::class, 'me']);
 });
+
+Route::post('/create-pokemon-temp', [PokemonController::class, 'createPokemon']);
+Route::get('/pokemons', [PokemonController::class, 'getPokemon']);
